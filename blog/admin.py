@@ -3,6 +3,6 @@ from .models import Post
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'created_on')
-    list_filter = ('created_on', 'author')
+    list_display = ('title', 'author', 'created_at')
+    list_filter = ('created_at', 'author')
     search_fields = ('title', 'content')

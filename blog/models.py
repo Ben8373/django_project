@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.contrib import admin
 import uuid
 
 
@@ -23,9 +22,11 @@ class Post(models.Model):
     upDated_on = models.DateTimeField(auto_now=True)
 
 
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'created_at')
-    list_filter = ('created_at', 'author')
-    search_fields = ('title', 'content')
-    excerpt = models.TextField(blank=True)
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)

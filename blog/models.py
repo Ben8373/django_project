@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib import admin
 import uuid
 
 
@@ -19,3 +20,11 @@ class Post(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=Status, default=0)
+
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'created_at')
+    list_filter = ('created_at', 'author')
+    search_fields = ('title', 'content')
+    excerpt = models.TextField(blank=True)

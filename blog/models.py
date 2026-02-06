@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-import uuid
 
 
 
@@ -36,7 +35,7 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    Field_2 = models.CharField(default="Hello world!")
+    Field_2 = models.CharField(default="HelloWorld!")
     Field_3 = models.CharField(null=True)
 
     class Meta:

@@ -12,4 +12,3 @@ def post_detail(request, pk):
 
 # Create your views here.
 class PostList(generic.ListView):
-    model = Post

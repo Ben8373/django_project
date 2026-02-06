@@ -54,7 +54,7 @@
             <div class="post">
                 <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
                 <div class="post-meta">
-                    By <strong>{{ post.author }}</strong> on {{ post.created_on|date:"F d, Y" }}
+                    By <strong>{{ post.author }}</strong> on {{ post.created_at|date:"F d, Y" }}
                 </div>
                 <p>{{ post.content|truncatewords:30 }}</p>
                 <a href="{% url 'post_detail' post.pk %}">Read more →</a>

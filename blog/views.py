@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
 from .models import Post
 
 def home(request):
@@ -10,5 +10,6 @@ def post_detail(request, pk):
     post = Post.objects.get(pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
-def hello_blog(request):
-    return HttpResponse("Hello, blog!")
+# Create your views here.
+class PostList(generic.ListView):
+    model = Post

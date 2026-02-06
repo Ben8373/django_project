@@ -10,5 +10,7 @@ def post_detail(request, pk):
     post = Post.objects.get(pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
-# Create your views here.
 class PostList(generic.ListView):
+    model = Post
+    template_name = 'blog/post_list.html'
+    context_object_name = 'posts'

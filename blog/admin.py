@@ -4,9 +4,9 @@ from .models import Post, Comment
 
 
 class PostAdmin(SummernoteModelAdmin):
-    list_display = ('title', 'slug', 'status')
-    search_fields = ['title']
-    list_filter = ('status',)
+    list_display = ('title', 'slug', 'status', 'created_at')
+    search_fields = ['title', 'content']
+    list_filter = ('status', 'created_at')
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_summernote.fields import SummernoteTextField
 
 
 
@@ -15,7 +16,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
-    content = models.TextField()
+    content = SummernoteTextField()
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=Status, default=0)
     updated_on = models.DateTimeField(auto_now=True)

@@ -3,6 +3,7 @@ body {
     display: flex !important;
     flex-direction: column !important;
     min-height: 100vh !important;
+    padding-bottom: 200px;
 }
 
 .brand {
@@ -173,6 +174,10 @@ nav {
 
 .footer {
     background-color: #445261;
-    flex-shrink: 0 !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
+    z-index: 100;
 }

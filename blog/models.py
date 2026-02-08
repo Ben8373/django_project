@@ -36,6 +36,8 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+    excerpt = models.CharField(max_length=200)
+
 
     class Meta:
         ordering = ["created_on"]

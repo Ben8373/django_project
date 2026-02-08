@@ -47,21 +47,20 @@
 
     <!-- Pagination -->
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page=1" class="page-link">&laquo; FIRST</a></li>
-            {% if page_obj.previous_page_number %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">PREVIOUS</a></li>
-            {% endif %}
-            {% endif %}
-
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT</a></li>
-            <li><a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">LAST &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li>
+            <a href="?page={{ page_obj.previous_page_number }}"
+              class="page-link">« PREV</a>
+        </li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li>
+            <a href="?page={{ page_obj.next_page_number }}"
+              class="page-link">NEXT »</a>
+        </li>
+        {% endif %}
+    </ul>
     {% endif %}
 
 </div>

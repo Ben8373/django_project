@@ -9,6 +9,16 @@ body {
     min-height: 100vh;
 }
 
+main {
+    flex: 1;
+}
+
+.container-fluid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -34,12 +44,6 @@ body {
 
 .main-bg {
     background-color: #F9FAFC;
-    flex: 1;
-}
-
-main {
-    flex: 1;
-    min-height: 500px;
 }
 
 nav {

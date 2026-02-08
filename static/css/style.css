@@ -1,6 +1,6 @@
 body {
     background-color: #F9FAFC;
-    min-height: 100vh;
+    min-height: 100vh !important;
     display: flex;
     flex-direction: column;
 }
@@ -30,11 +30,10 @@ body {
 
 .main-bg {
     background-color: #F9FAFC;
-    flex: 1;
 }
 
 main {
-    flex: 1;
+    flex: 1 0 auto;
 }
 
 .card {
@@ -171,4 +170,5 @@ main {
 .footer {
     background-color: #445261;
     flex-shrink: 0;
+    width: 100%;
 }

@@ -16,10 +16,13 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
+    excerpt = models.CharField(max_length=200, default='')
     content = SummernoteTextField()
+    featured_image = models.ImageField(upload_to='featured_images/', default='placeholder')
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=Status, default=0)
     updated_on = models.DateTimeField(auto_now=True)
+    number_of_likes = models.IntegerField(default=0)
 
     class Meta:
         ordering = ["-created_at"]

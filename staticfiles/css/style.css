@@ -4,9 +4,9 @@ html {
 
 body {
     background-color: #F9FAFC;
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .brand {
@@ -34,14 +34,16 @@ body {
 
 .main-bg {
     background-color: #F9FAFC;
+    flex: 1;
 }
 
 main {
-    flex: 1 !important;
+    flex: 1;
+    min-height: 500px;
 }
 
-main.flex-shrink-0 {
-    flex: 1 !important;
+nav {
+    flex-shrink: 0;
 }
 
 .card {

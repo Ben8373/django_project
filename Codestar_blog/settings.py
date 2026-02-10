@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_summernote',
     'ckeditor',
+    'ckeditor_uploader',
     'blog',
     'about',
 ]
@@ -106,6 +108,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# CKEditor Settings
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+    },
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

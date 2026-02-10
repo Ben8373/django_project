@@ -54,6 +54,7 @@
             By <strong>{{ post.author }}</strong> on {{ post.created_on|date:"F d, Y at g:i A" }}
         </div>
         <div class="post-content">
+            <h2>{{ coder }}</h2>
             {{ post.content|linebreaks }}
         </div>
         <div class="back-link">

@@ -2,34 +2,35 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign Up" %}</h3>
+      <h3>{% trans "Sign In" %}</h3>
 
-      <p>{% blocktrans %}
+      <p>
         Welcome back to the code|star blog.
-        Do you already have an account? Then please
-        <a class="link" href="{{ login_url }}">sign in</a>
+        Don't have an account yet? Then please
+        <a class="link" href="{% url 'account_signup' %}">sign up</a>
         instead.
-      {% endblocktrans %}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <form class="signup" id="signup_form" method="post"
-        action="{% url 'account_signup' %}">
+      </p>
+
+      <form method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}"
-          value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="btn btn-signup right" type="submit">
-          {% trans "Sign Up" %} &raquo;</button>
+        
+        <div class="form-group mb-3">
+          <label for="id_login" class="form-label">Email or Username</label>
+          <input class="form-control" type="text" name="login" id="id_login" autocomplete="username" required>
+        </div>
+        
+        <div class="form-group mb-3">
+          <label for="id_password" class="form-label">Password</label>
+          <input class="form-control" type="password" name="password" id="id_password" autocomplete="current-password" required>
+        </div>
+
+        <button type="submit" class="btn btn-signup">{% trans "Sign In" %}</button>
       </form>
     </div>
   </div>

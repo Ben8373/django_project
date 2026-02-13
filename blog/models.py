@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from cloudinary.models import CloudinaryField
 
 
 Status = (
@@ -17,7 +17,7 @@ class Post(models.Model):
     )
     excerpt = models.CharField(max_length=200, default='')
     content = models.TextField()
-    featured_image = models.ImageField(upload_to='featured_images/', default='placeholder')
+    featured_image = CloudinaryField('image', default='placeholder')
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=Status, default=0)
     updated_on = models.DateTimeField(auto_now=True)

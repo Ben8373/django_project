@@ -27,8 +27,8 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-change-me-in-production")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# SECURITY WARNING: don't run with debug turos.environ.get("DEBUG", "True"
+DEBUG = FALSE
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -43,6 +43,11 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+
 
 # Application definition
 
@@ -53,11 +58,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'django_summernote',
+    'cloudinary',
     'ckeditor',
     'ckeditor_uploader',
     'blog',
